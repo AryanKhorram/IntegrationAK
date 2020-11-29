@@ -3,13 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var db = require('./database'); //Connecting to the database
 
 var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/books'); //Loading the router of books
 
+
+var cors = require('cors');
+
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

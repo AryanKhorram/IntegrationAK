@@ -8,6 +8,9 @@ function HandleError(response, reason, message, code){
 }
 
 router.post('/', (request, response, next) => {
+    router.get('/:isbn', (request, response, next) =>{
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
     let newBook = request.body;
     if (!newBook.Name || !newBook.Price || !newBook.Author){
         HandleError(response, 'Missing Info', 'Form data missing', 500);
@@ -29,6 +32,9 @@ router.post('/', (request, response, next) => {
 });
 
 router.get('/', (request, response, next) => {
+    router.get('/:isbn', (request, response, next) =>{
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
     let Name = request.query['Name'];
     if (Name) {
         booksSchema
@@ -54,6 +60,9 @@ router.get('/', (request, response, next) => {
 });
 
 router.get('/:id', (request, response, next) => {
+    router.get('/:isbn', (request, response, next) =>{
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
     booksSchema
         .findOne({"_id": request.params.id}, (error, result) =>{
             if (error){
@@ -68,6 +77,9 @@ router.get('/:id', (request, response, next) => {
 });
 
 router.patch('/:id', (request, response, next) =>{
+    router.get('/:isbn', (request, response, next) =>{
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
    booksSchema
        .findById(request.params.id, (error, result) => {
            if(error){
@@ -92,6 +104,9 @@ router.patch('/:id', (request, response, next) =>{
 });
 
 router.delete('/:id', (request, response, next) =>{
+    router.get('/:isbn', (request, response, next) =>{
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
     booksSchema
         .findById(request.params.id, (error, result)=>{
             if(error) {
@@ -109,6 +124,8 @@ router.delete('/:id', (request, response, next) =>{
         });
 });
 
-
+router.get('/:isbn', (request, response, next) =>{
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
 
 module.exports = router;
