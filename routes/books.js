@@ -48,10 +48,9 @@ router.get('/author/:author', (request, response, next) =>{
         })});
 
 router.get('/', (request, response, next) => {
-    router.get('/:isbn', (request, response, next) =>{
         response.header("Access-Control-Allow-Origin", "*");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
-    let Name = request.query['Name'];
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    let Name = request.query['author'];
     if (Name) {
         booksSchema
             .find({"Name": Name})
