@@ -8,9 +8,8 @@ function HandleError(response, reason, message, code){
 }
 
 router.post('/', (request, response, next) => {
-    router.get('/:isbn', (request, response, next) =>{
-        response.header("Access-Control-Allow-Origin", "*");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     let newBook = request.body;
     if (!newBook.Name || !newBook.Price || !newBook.Author){
         HandleError(response, 'Missing Info', 'Form data missing', 500);
