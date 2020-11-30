@@ -81,7 +81,7 @@ router.get('/:id', (request, response, next) => {
         response.header("Access-Control-Allow-Origin", "*");
         response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
     booksSchema
-        .findOne({"_id": request.params.id}, (error, result) =>{
+        .findOne({"ISBN": request.params['isbn']}), (error, result) =>{
             if (error){
                 response.status(500).send(error);
             }
@@ -90,7 +90,7 @@ router.get('/:id', (request, response, next) => {
             }else{
                 response.status(404).send({"id": request.params.id, "error": "Not Found"});
             }
-        });
+        };
 });
 
 router.patch('/:id', (request, response, next) =>{
