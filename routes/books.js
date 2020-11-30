@@ -53,7 +53,7 @@ router.get('/', (request, response, next) => {
     let Name = request.query['author'];
     if (Name) {
         booksSchema
-            .find({"Name": Name})
+            .find({"Author": Name})
             .exec((error, books) => {
                 if (error) {
                     response.send({"error": error});
