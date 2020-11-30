@@ -76,9 +76,8 @@ router.get('/', (request, response, next) => {
 });
 
 router.get('/:id', (request, response, next) => {
-    router.get('/:isbn', (request, response, next) =>{
         response.header("Access-Control-Allow-Origin", "*");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     booksSchema
         .findOne({"ISBN": request.params['id']}), (error, result) =>{
             if (error){
