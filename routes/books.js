@@ -94,14 +94,14 @@ router.patch('/:id', (request, response, next) =>{
             .find({"ISBN": request.params['id']}) .exec((error, books) => {
                     if(error){
                         response.status(500).send(error);
-                    }else if (result){
+                    }else if (books){
                     if(request.body._id){
                         delete request.body._id;
                     }
                     for(let field in request.body){
-                        result[field] = request.body[field];
+                        books[field] = request.body[field];
                     }
-                    result.save((error, books) => {
+                    books.save((error, books) => {
                         if (error){
                             response.status(500).send(error);
                         }
