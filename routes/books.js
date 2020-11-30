@@ -141,8 +141,4 @@ router.delete('/:id', (request, response, next) =>{
         });
 });
 
-router.get('/:isbn', (request, response, next) =>{
-    response.header("Access-Control-Allow-Origin", "*");
-    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
-
 module.exports = router;
