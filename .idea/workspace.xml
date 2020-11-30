@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -11,9 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b3f9bdf-96c7-4362-8f75-e9cab39fa62f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/books.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,6 +128,18 @@
       <workItem from="1606613385714" duration="101000" />
       <workItem from="1606613907260" duration="206000" />
       <workItem from="1606614122770" duration="8000" />
+      <workItem from="1606614194994" duration="160000" />
+      <workItem from="1606618185023" duration="673000" />
+      <workItem from="1606696940722" duration="77000" />
+      <workItem from="1606698559165" duration="57000" />
+      <workItem from="1606698730837" duration="200000" />
+      <workItem from="1606698962246" duration="39000" />
+      <workItem from="1606699114202" duration="13000" />
+      <workItem from="1606699189469" duration="5000" />
+      <workItem from="1606699311463" duration="387000" />
+      <workItem from="1606699784311" duration="48000" />
+      <workItem from="1606699867504" duration="15000" />
+      <workItem from="1606699911139" duration="50000" />
     </task>
     <servers />
   </component>
@@ -231,5 +243,9 @@
     </state>
     <state width="869" height="254" key="GridCell.Tab.3.right/0.23.1680.961@0.23.1680.961" timestamp="1606264523849" />
     <state width="869" height="254" key="GridCell.Tab.3.right/0.23.1680.963@0.23.1680.963" timestamp="1606354217356" />
+    <state x="608" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1606699479293">
+      <screen x="0" y="23" width="1680" height="967" />
+    </state>
+    <state x="608" y="235" width="670" height="676" key="search.everywhere.popup/0.23.1680.967@0.23.1680.967" timestamp="1606699479293" />
   </component>
 </project>

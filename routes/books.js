@@ -31,6 +31,23 @@ router.post('/', (request, response, next) => {
     }
 });
 
+router.get('/author/:author', (request, response, next) =>{
+    console.log("Hello");
+    router.get('/author/:author', (request, response, next) =>{
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")});
+    booksSchema
+        .findOne({"Author": request.params['author']}, (error, result)=> {
+            if (error) {
+                response.status(500).send(error);
+            }
+            if (result) {
+                response.send(result);
+            } else {
+                response.status(404).send({"id": request.params.id, "error": "Not Found"});
+            }
+        })});
+
 router.get('/', (request, response, next) => {
     router.get('/:isbn', (request, response, next) =>{
         response.header("Access-Control-Allow-Origin", "*");
