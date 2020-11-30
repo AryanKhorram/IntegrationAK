@@ -91,26 +91,26 @@ router.patch('/:id', (request, response, next) =>{
         response.header("Access-Control-Allow-Origin", "*");
         response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         booksSchema
-            .find({"ISBN": request.params['id']}), (error, result) => {
-           if(error){
-               response.status(500).send(error);
-           }else if (result){
-               if(request.body._id){
-                   delete request.body._id;
-               }
-               for(let field in request.body){
-                   result[field] = request.body[field];
-               }
-               result.save((error, books) => {
-                   if (error){
-                       response.status(500).send(error);
-                   }
-                   response.send(books);
-               });
-           }else{
-               response.status(404).send({"id":request.params.id, "error": "Not Found"});
-           }
-       }});
+            .find({"ISBN": request.params['id']}) .exec((error, books) => {
+                    if(error){
+                        response.status(500).send(error);
+                    }else if (result){
+                    if(request.body._id){
+                        delete request.body._id;
+                    }
+                    for(let field in request.body){
+                        result[field] = request.body[field];
+                    }
+                    result.save((error, books) => {
+                        if (error){
+                            response.status(500).send(error);
+                        }
+                        response.send(books);
+                    });
+                }else{
+                    response.status(404).send({"id":request.params.id, "error": "Not Found"});
+                }
+        })});
 
 router.delete('/:id', (request, response, next) =>{
     router.get('/:isbn', (request, response, next) =>{
